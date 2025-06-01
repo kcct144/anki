@@ -1,0 +1,132 @@
+<body class="bg-gray-50 p-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- 单词卡片 -->
+    <div
+      class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm p-6 mb-6"
+    >
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between">
+        <div>
+          <div class="flex items-end">
+            <h1 class="text-4xl font-bold text-gray-800">{{单词}}</h1>
+            {{#考纲}}
+            <span
+              class="ml-3 mb-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-600 border border-blue-100"
+            >
+              {{考纲}}
+            </span>
+            {{/考纲}}
+          </div>
+          <h2 class="text-xl text-gray-600 mt-2">{{基本释义}}</h2>
+        </div>
+
+        <div class="flex items-center mt-4 md:mt-0">
+          <span class="text-gray-600 font-mono">{{音标}}</span>
+          <button
+            onclick="document.getElementById('my-audio').play()"
+            class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 hover:bg-blue-600 transition-all"
+          >
+            ▶
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4 text-sm text-gray-600">
+        <p>{{章节}}</p>
+      </div>
+    </div>
+
+    <!-- 内容区 -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- 左栏 -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- 例句卡片 -->
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">动画例句</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <p class="text-gray-800">{{例句英文}}</p>
+                <p class="text-gray-600 mt-1">{{例句中文}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">词典例句</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">{{词典例句}}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 笔记卡片 -->
+        {{#笔记}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">笔记</h3>
+            <div class="prose prose-sm max-w-none text-gray-800">{{笔记}}</div>
+          </div>
+        </div>
+        {{/笔记}}
+      </div>
+
+      <!-- 右栏 -->
+      <div class="space-y-6">
+        <!-- 同根词卡片 -->
+        {{#同根词}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">同根词</h3>
+            <div class="prose prose-sm max-w-none text-gray-800">
+              {{同根词}}
+            </div>
+          </div>
+        </div>
+        {{/同根词}}
+
+        <!-- 近义词卡片 -->
+        {{#近义词}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">近义词</h3>
+            <div class="prose prose-sm max-w-none text-gray-800">
+              {{近义词}}
+            </div>
+          </div>
+        </div>
+        {{/近义词}}
+
+        <!-- 图片展示 -->
+        {{#图片}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">关联图片</h3>
+            <div class="flex justify-center">
+              <img
+                src="{{图片}}"
+                alt="{{单词}}"
+                class="max-w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+        {{/图片}}
+      </div>
+    </div>
+  </div>
+
+  <audio
+    id="my-audio"
+    src="https://dict.youdao.com/dictvoice?audio={{单词}}"
+  ></audio>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
