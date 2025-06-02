@@ -1,0 +1,99 @@
+/* 图片属性 */
+img {
+  width: 100%;
+  /* 限制图片大小最大为xx像素 */
+  max-width: 500px;
+}
+
+/* 布局容器 */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* 定义行，一行为100% */
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+/* 定义列，分栏 */
+.col {
+  box-sizing: border-box;
+  padding-right: 10px;
+  /* 分栏间隔，可以根据需要调整 */
+  padding-left: 10px;
+  /* 分栏间隔，可以根据需要调整 */
+}
+/* 左栏 */
+.col1 {
+  flex: 1;
+}
+/* 右栏 */
+.col2 {
+  flex: 1;
+}
+
+/* 定义响应式尺寸 根据屏幕尺寸修改布局 */
+/* Extra Small devices (手机) */
+@media (max-width: 575.98px) {
+  .col1 {
+    /* 左栏占比,若100%则占满一行,右栏会在显示完左栏后显示在下面 */
+    flex-basis: 100%;
+  }
+  .col2 {
+    /* 右栏占比 */
+    flex-basis: 100%;
+  }
+}
+/* Small devices (平板) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .col1 {
+    flex-basis: 100%;
+  }
+  .col2 {
+    flex-basis: 100%;
+  }
+}
+/* Medium devices (台式电脑和平板) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col1 {
+    flex-basis: 50%;
+  }
+  .col2 {
+    flex-basis: 50%;
+  }
+}
+/* Large devices (台式电脑) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .col1 {
+    flex-basis: 33.33%;
+  }
+  .col2 {
+    flex-basis: 66.66%;
+  }
+}
+/* Extra Large devices (大屏幕台式电脑) */
+@media (min-width: 1200px) {
+  .col1 {
+    flex-basis: 33.33%;
+  }
+  .col2 {
+    flex-basis: 66.66%;
+  }
+}
+/* 灰体小字，用于考试范围和音标 */
+.gray-text {
+  /* 透明度 */
+  opacity: 0.8;
+  /* 字体大小 */
+  font-size: 0.9em;
+}
+/* 笔记组件背景样式 */
+.note {
+  /* 背景颜色 */
+  background-color: #bababa28;
+  /* 文字对齐方式 */
+  align-content: justify;
+  /* 页边距 */
+  padding: 10px;
+}
