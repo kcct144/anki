@@ -7,7 +7,7 @@
       <div class="flex flex-col md:flex-row md:items-end md:justify-between">
         <div>
           <div class="flex items-end">
-            <h1 class="text-4xl font-bold text-gray-800">{{单词}}</h1>
+            <h1 class="text-4xl font-bold">{{单词}}</h1>
             {{#考纲}}
             <span
               class="ml-3 mb-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-600 border border-blue-100"
@@ -16,11 +16,11 @@
             </span>
             {{/考纲}}
           </div>
-          <h2 class="text-xl text-gray-600 mt-2">{{参考释义}}</h2>
+          <h2 class="text-xl mt-2">{{参考释义}}</h2>
         </div>
 
         <div class="flex items-center mt-4 md:mt-0">
-          <span class="text-gray-600 font-mono">{{音标}}</span>
+          <span class="font-mono">{{音标}}</span>
           <button
             onclick="document.getElementById('my-audio').play()"
             class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 hover:bg-blue-600 transition-all"
@@ -40,7 +40,7 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">基本释义</h3>
+            <h3 class="text-lg font-semibold mb-4">基本释义</h3>
             <div class="space-y-4">{{基本释义}}</div>
           </div>
         </div>
@@ -49,7 +49,7 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">词典例句</h3>
+            <h3 class="text-lg font-semibold mb-4">词典例句</h3>
             <div class="space-y-4">
               <div class="border-l-4 border-blue-500 pl-4">{{词典例句}}</div>
             </div>
@@ -62,8 +62,8 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">笔记</h3>
-            <div class="prose prose-sm max-w-none text-gray-800">{{笔记}}</div>
+            <h3 class="text-lg font-semibold mb-4">笔记</h3>
+            <div class="prose prose-sm max-w-none">{{笔记}}</div>
           </div>
         </div>
         {{/笔记}}
@@ -77,10 +77,8 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">同根词</h3>
-            <div class="prose prose-sm max-w-none text-gray-800">
-              {{同根词}}
-            </div>
+            <h3 class="text-lg font-semibold mb-4">同根词</h3>
+            <div class="prose prose-sm max-w-none">{{同根词}}</div>
           </div>
         </div>
         {{/同根词}}
@@ -91,10 +89,8 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">近义词</h3>
-            <div class="prose prose-sm max-w-none text-gray-800">
-              {{近义词}}
-            </div>
+            <h3 class="text-lg font-semibold mb-4">近义词</h3>
+            <div class="prose prose-sm max-w-none">{{近义词}}</div>
           </div>
         </div>
         {{/近义词}}
@@ -105,7 +101,7 @@
           class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
         >
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">关联图片</h3>
+            <h3 class="text-lg font-semibold mb-4">关联图片</h3>
             <div class="flex justify-center">
               <img
                 src="{{图片}}"
@@ -122,6 +118,7 @@
 
   <audio
     id="my-audio"
+    autoplay
     src="https://dict.youdao.com/dictvoice?audio={{单词}}"
   ></audio>
   <script src="https://cdn.tailwindcss.com"></script>
