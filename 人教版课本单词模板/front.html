@@ -1,0 +1,27 @@
+<body class="bg-gray-50 p-4">
+  <div class="max-w-7xl mx-auto">
+    <!-- 单词卡片 -->
+    <div
+      class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm p-6 mb-6"
+    >
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between">
+        <div class="flex items-end">
+          <h1 class="text-4xl font-bold text-gray-800">{{单词}}</h1>
+          <div class="flex items-center ml-4">
+            <button
+              onclick="playAudio()"
+              class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 hover:bg-blue-600 transition-all"
+            >
+              ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio
+    id="my-audio"
+    src="https://dict.youdao.com/dictvoice?audio={{单词}}"
+  ></audio>
+  <link rel="stylesheet" href="css.css" />
+</body>

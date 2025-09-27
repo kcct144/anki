@@ -16,6 +16,7 @@
             </span>
             {{/考纲}}
           </div>
+          <span class="text-gray-400 font-mono">{{词频}}</span>
           <h2 class="text-xl text-gray-600 mt-2">{{参考释义}}</h2>
         </div>
 
@@ -63,26 +64,7 @@
             <div class="prose prose-sm max-w-none text-gray-800">{{笔记}}</div>
           </div>
         </div>
-        {{/笔记}} {{#易混}}
-        <div
-          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
-        >
-          <div class="p-6">
-            <div class="prose prose-sm max-w-none text-gray-800">{{易混}}</div>
-          </div>
-        </div>
-        {{/易混}}
-        <!-- 图片展示 -->
-        {{#图片}}
-        <div
-          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
-        >
-          <div class="p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4">关联图片</h3>
-            <div class="flex justify-center">{{图片}}</div>
-          </div>
-        </div>
-        {{/图片}}
+        {{/笔记}}
       </div>
 
       <!-- 右栏 -->
@@ -114,6 +96,24 @@
           </div>
         </div>
         {{/近义词}}
+
+        <!-- 图片展示 -->
+        {{#图片}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">关联图片</h3>
+            <div class="flex justify-center">
+              <img
+                src="{{图片}}"
+                alt="{{单词}}"
+                class="max-w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+        {{/图片}}
       </div>
     </div>
   </div>

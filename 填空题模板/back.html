@@ -1,0 +1,65 @@
+<body class="bg-gray-50 p-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- 单词卡片 -->
+    <div class="max-w-6xl mx-auto">
+      <!-- 单词卡片 -->
+      <div
+        class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm p-6 mb-6"
+      >
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between">
+          <div>{{cloze:题干}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容区 -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- 左栏 -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- 笔记卡片 -->
+        {{#笔记}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <div class="prose prose-sm max-w-none text-gray-800">{{笔记}}</div>
+          </div>
+        </div>
+        {{/笔记}} {{#知识体系}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <div class="flex justify-center">{{知识体系}}</div>
+          </div>
+        </div>
+        {{/知识体系}} {{#时间轴}}
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <div class="flex justify-center">{{时间轴}}</div>
+          </div>
+        </div>
+        {{/时间轴}}
+      </div>
+
+      <!-- 右栏 -->
+      <div class="space-y-6">
+        <!-- 同根词卡片 -->
+        <div
+          class="bg-white bg-opacity-0 rounded-xl border border-gray-200 shadow-sm overflow-hidden"
+        >
+          <div class="p-6">
+            <div class="prose prose-sm max-w-none text-gray-800">
+              <p>📕 {{课本}}</p>
+              <p>📜 {{单元}}</p>
+              <p>💡 {{考点}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="css.css" />
+</body>
