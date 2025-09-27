@@ -9,7 +9,7 @@
           <h1 class="text-4xl font-bold text-gray-800">{{单词}}</h1>
           <div class="flex items-center ml-4">
             <button
-              onclick="playAudio()"
+              onclick="document.getElementById('my-audio').play()"
               class="ml-3 flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 hover:bg-blue-600 transition-all"
             >
               ▶
@@ -23,5 +23,8 @@
     id="my-audio"
     src="https://dict.youdao.com/dictvoice?audio={{单词}}"
   ></audio>
-  <link rel="stylesheet" href="css.css" />
+  <link
+    rel="stylesheet"
+    href="css.css"
+  />
 </body>

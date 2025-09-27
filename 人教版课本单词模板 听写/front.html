@@ -13,7 +13,7 @@
             <!-- 音频播放按钮 -->
             <div class="flex-shrink-0">
               <button
-                onclick="playAudio()"
+                onclick="document.getElementById('my-audio').play()"
                 class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 hover:bg-blue-600 transition-all text-white text-xl"
               >
                 播放 ▶
@@ -58,30 +58,34 @@
     src="https://dict.youdao.com/dictvoice?audio={{单词}}"
   ></audio>
 
-  <link rel="stylesheet" href="css.css" />
+  <link
+    rel="stylesheet"
+    href="css.css"
+  />
 
   <script>
-    document.getElementById("userAnswer").focus()
+    document.getElementById("userAnswer").focus();
     function checkAnswer() {
-      const userAnswer = document.getElementById("userAnswer").value.trim()
-      const correctAnswer = "{{单词}}".trim().toLowerCase()
-      const resultElement = document.getElementById("result")
+      const userAnswer = document.getElementById("userAnswer").value.trim();
+      const correctAnswer = "{{单词}}".trim().toLowerCase();
+      const resultElement = document.getElementById("result");
 
       if (userAnswer.toLowerCase() === correctAnswer) {
-        resultElement.innerHTML = '<span class="text-green-600">✅ 正确!</span>'
+        resultElement.innerHTML =
+          '<span class="text-green-600">✅ 正确!</span>';
         resultElement.className =
-          "mt-6 text-center text-xl font-medium min-h-8 text-green-600"
+          "mt-6 text-center text-xl font-medium min-h-8 text-green-600";
       } else {
-        resultElement.innerHTML = `<span class="text-red-600">❌ 错误! 正确答案: {{单词}}</span>`
+        resultElement.innerHTML = `<span class="text-red-600">❌ 错误! 正确答案: {{单词}}</span>`;
         resultElement.className =
-          "mt-6 text-center text-xl font-medium min-h-8 text-red-600"
+          "mt-6 text-center text-xl font-medium min-h-8 text-red-600";
       }
-      document.getElementById('userAnswer').readOnly = true;
+      document.getElementById("userAnswer").readOnly = true;
     }
 
     function checkEnter(event) {
       if (event.key === "Enter") {
-        checkAnswer()
+        checkAnswer();
       }
     }
   </script>
